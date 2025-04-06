@@ -153,25 +153,7 @@ body {
 .caption1 {
   display: block;  /* 인라인이 아니라 블록 요소로 설정 */
   text-align: center;  /* 가운데 정렬 */
-  margin-top: 10px;  /* 이미지와 캡션 사이 간격 */
-  font-size: 14px;  /* 캡션 글자 크기 */
-  font-weight: bold;
-  color: #333; /* 색상 조정 가능 */
-}
-
-
-.caption2{
-  display: block;  /* 인라인이 아니라 블록 요소로 설정 */
-  text-align: center;  /* 가운데 정렬 */
-  margin-top: 20px;  /* 이미지와 캡션 사이 간격 */
-  font-size: 14px;  /* 캡션 글자 크기 */
-  font-weight: bold;
-  color: #333; /* 색상 조정 가능 */
-}
-.caption {
-  display: block;  /* 인라인이 아니라 블록 요소로 설정 */
-  text-align: center;  /* 가운데 정렬 */
-  margin-top: 5px;  /* 이미지와 캡션 사이 간격 */
+  margin-top: -10px;  /* 이미지와 캡션 사이 간격 */
   font-size: 14px;  /* 캡션 글자 크기 */
   font-weight: bold;
   color: #333; /* 색상 조정 가능 */

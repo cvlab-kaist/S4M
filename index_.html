@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="SOLA">
+    <meta property="og:title" content="SOLA"/>
+    <meta property="og:description" content="Referring Video Object Segmentation via Language Aligned Track Selection"/>
+    <meta property="og:url" content="URL OF THE WEBSITE"/>
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+
+    <meta name="twitter:title" content="SOLA">
+    <meta name="twitter:description" content="Referring Video Object Segmentation via Language Aligned Track Selection">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Referring Video Object Segmentation via Language Aligned Track Selection</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">Referring Video Object Segmentation via Language Aligned Track Selection</h1>
+                <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                    <a href="https://github.com/deep-overflow" target="_blank">Seongchan Kim</a><sup>1,*</sup>,</span>
+                <span class="author-block">
+                    <a href="https://github.com/wooj0216" target="_blank">Woojeong Jin</a><sup>1,*</sup>,</span>
+                <span class="author-block">
+                    <a href="https://github.com/SangbeomLim" target="_blank">Sangbeom Lim</a><sup>2,*</sup>,</span>
+                <span class="author-block">
+                    <a href="https://github.com/yoon-heez" target="_blank">Heeji Yoon</a><sup>1,*</sup>,</span>
+                    <br>
+                <span class="author-block">
+                    <a href="https://github.com/Eenrue" target="_blank">Hyunwook Choi</a><sup>2</sup>,</span>
+                <span class="author-block">
+                    <a href="https://cvlab.kaist.ac.kr/members/faculty" target="_blank">Seungryong Kim</a><sup>1,†</sup>
+                </span>
+                    <div>
+                    </div>
+
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>KAIST, <sup>2</sup>Korea University</span>
+                        <br>
+                        <span class="author-block" style="margin-top: -10px;"><small><sup>†</sup>Corresponding Author</small></span>
+                        <span class="author-block" style="margin-top: 20px;"><small><sup>*</sup>Indicates Equal Contributions</small></span>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <span class="is-size-5 publication-venue">ArXiv 2025</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- Arxiv PDF link -->
+                        <span class="link-block">
+                            <a href="static/paper.pdf" target="_blank"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Paper</span>
+                        </a>
+                        </span>
+
+                    <!-- Github link -->
+                    <span class="link-block">
+                        <a href="https://github.com/cvlab-kaist/SOLA" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                        <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                    </a>
+                    </span>
+
+                    <!-- ArXiv abstract Link -->
+                    <span class="link-block">
+                    <a href="https://arxiv.org/abs/2412.01136" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>ArXiv</span>
+                    </a>
+                </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    <section class="section hero teaser-video">
+    <div class="columns is-centered has-text-centered">
+        <div class="column" style="width: 100%; max-width: 1200px;">
+        <h2 class="title is-3">S⁴M : Boosting Semi-Supervised Instance Segmentation with SAM</h2>
+        <p style="font-size: 20px; text-align: center;" id="slider-description">
+            <b>S⁴M</b> Semi-supervised instance segmentation poses challenges due to limited labeled data, causing difficulties in accurately localizing distinct object instances. Current teacher-student frameworks still suffer from performance constraints due to unreliable pseudo-label quality stemming from limited labeled data. While the Segment Anything Model (SAM) offers robust segmentation capabilities at various granularities, directly applying SAM introduces challenges such as class-agnostic predictions and potential over-segmentation. To address these complexities, we carefully integrate SAM into the semi-supervised instance segmentation framework, developing a novel distillation method that effectively captures the precise localization capabilities of SAM without compromising semantic recognition. Furthermore, we incorporate pseudo-label refinement as well as a specialized data augmentation with the refined pseudo-labels, resulting in superior performance. We establish state-of-the-art performance, and provide comprehensive experiments and ablation studies to validate the effectiveness of our proposed approach.
+        </p>
+        <br>
+        <div class="video-grid">
+            <div class="video-container">
+            <a href="static/results/videos/main_qual/ours/resized_e610fde8a3b4_4.gif">
+                <img src="static/results/videos/main_qual/ours/resized_e610fde8a3b4_4.gif">
+            </a>
+            <div class="video-caption">The two vehicles parked on the side of the road</div>
+            </div>
+            <div class="video-container">
+            <a href="static/results/videos/main_qual/ours/resized_45fef1660d6d_2.gif">
+                <img src="static/results/videos/main_qual/ours/resized_45fef1660d6d_2.gif">
+            </a>
+            <div class="video-caption">moving from right to left</div>
+            </div>
+            <div class="video-container">
+            <a href="static/results/videos/main_qual/ours/resized_83b4fc545af8_6.gif">
+                <img src="static/results/videos/main_qual/ours/resized_83b4fc545af8_6.gif">
+            </a>
+            <div class="video-caption">It enthusiastically chases and pounces on the wand</div>
+            </div>
+            <div class="video-container">
+            <a href="static/results/videos/main_qual/ours/resized_ff6a312b4f9c_1.gif">
+                <img src="static/results/videos/main_qual/ours/resized_ff6a312b4f9c_1.gif">
+            </a>
+            <div class="video-caption">baby tiger without moving position</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <style>
+    .teaser-video .video-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: flex-start;
+    }
+
+    .teaser-video .video-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        vertical-align: center;
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .teaser-video .video-container img {
+        height: 160px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .teaser-video .video-caption {
+        font-style: italic;
+        margin-top: 10px;
+        font-size: 14px;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    </style>
+    <!-- End teaser video -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+            <p>
+                Semi-supervised instance segmentation poses challenges due to limited labeled data, causing difficulties in accurately localizing distinct object instances. 
+                Current teacher-student frameworks still suffer from performance constraints due to unreliable pseudo-label quality stemming from limited labeled data. 
+                While the Segment Anything Model (SAM) offers robust segmentation capabilities at various granularities, directly applying SAM introduces challenges such as class-agnostic predictions and potential over-segmentation. 
+                To address these complexities, we carefully integrate SAM into the semi-supervised instance segmentation framework, developing a novel distillation method that effectively captures the precise localization capabilities of SAM without compromising semantic recognition. Furthermore, we incorporate pseudo-label refinement as well as a specialized data augmentation with the refined pseudo-labels, resulting in superior performance. We establish state-of-the-art performance, and provide comprehensive experiments and ablation studies to validate the effectiveness of our proposed approach.
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <section class="hero section">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Motivation</h2>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <img src="static/results/images/motivation/main_teaser.jpg" alt="Motivation image 1" class="method" style="max-width: 60%; height: auto; display: block;">
+            </div>
+            <h2 class="content has-text-justified" style="margin-top: 20px;">
+                Our method effectively bridges the modality gap by aligning the features obtained from fully frozen uni-modal encoders: the video segmentation model such as SAM2 and the text encoder such as RoBERTa.
+                By directly leveraging the token representations, our approach achieves lightweight multi-modal alignment while significantly reducing the number of trainable parameters.
+            </h2>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="hero section">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Architecture</h2>
+            <div class="hero-body" style="position: relative; text-align: center;">
+                <button id="arrow-left" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
+                <i class="fas fa-arrow-left" style="font-size: 24px; color: #333;"></i>
+                </button>
+                
+                <div style="position: relative;">
+                <img src="static/results/images/architecture/main_figure.jpg" alt="Method image" class="method" id="architecture-main-image" style="transition: opacity 0.5s ease-in-out; max-width: 100%;">
+
+                <p id="image-caption" style="margin-top: 10px; font-size: 16px; font-style: italic; color: #555;">Overall pipeline of the proposed SOLA framework</p>
+                </div>
+
+                <button id="arrow-right" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
+                <i class="fas fa-arrow-right" style="font-size: 24px; color: #333;"></i>
+                </button>
+            </div>
+            
+            <h2 class="content has-text-justified">
+                Our method selects the correct object mask track among candidates via a language-aligned track selection module.
+                We first generate candidate mask tracks and corresponding object tokens from the fully frozen SAM2.
+                These tokens are then aligned with language expressions, producing alignment scores that indicate selection probabilities.
+                Mask tracks with scores above a predefined threshold are selected and merged into the final binary segmentation mask.
+                By leveraging precomputed object tokens from SAM2, our approach minimizes trainable parameters, enabling efficient training on a single GPU.
+            </h2>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+    <script>
+        const images = [
+        {
+            src: 'static/results/images/architecture/main_figure.jpg',
+            caption: 'Overall pipeline of the proposed SOLA framework'
+        },
+        {
+            src: 'static/results/images/architecture/module.jpg',
+            caption: 'Architecture of the language-aligned track selection module'
+        }
+        ];
+    
+        let currentIndex = 0;
+    
+        function updateImageAndCaption(index) {
+        const mainImage = document.getElementById('architecture-main-image');
+        const imageCaption = document.getElementById('image-caption');
+        
+        mainImage.style.opacity = '0';
+    
+        setTimeout(() => {
+            mainImage.src = images[index].src;
+            imageCaption.textContent = images[index].caption;
+    
+        
+            if (images[index].src.includes('module.jpg')) {
+            mainImage.style.maxWidth = '50%';
+            } else {
+            mainImage.style.maxWidth = '100%';
+            }
+        
+            mainImage.style.opacity = '1';
+        }, 500);
+        }
+    
+        document.getElementById('arrow-left').addEventListener('click', function () {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImageAndCaption(currentIndex);
+        });
+    
+        document.getElementById('arrow-right').addEventListener('click', function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImageAndCaption(currentIndex);
+        });
+    </script>
+
+
+    <!-- Qualitative Results Section with Slider Functionality -->
+    <section class="section hero qualitative-results">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <video controls style="width: 100%; max-width: 950px;">
+            <source src="static/results/videos/SOLA_qual_all.mp4" type="video/mp4">
+        </video>
+        <!-- <p style="margin-top: 10px; font-size: 16px;">
+            The video showcases the qualitative results of our SOLA framework, demonstrating its effectiveness and robustness.
+        </p> -->
+        </div>
+    </div>
+    </section>
+
+    <style>
+    /* Video Group 1 Styles */
+    .video-group.group-1 {
+    margin-left: -70px;
+    }
+    .video-group.group-1 .dshmp-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 30px;
+    }
+    .video-group.group-1 .ours-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 30px;
+        padding-left: 35px;
+    }
+    .video-group.group-1 .video-container{
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    }
+    .video-group.group-1 .video-container img {
+    max-height: 140px; /* GIF 최대 높이 */
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    }
+    /* Video Group 2 Styles */
+    .video-group.group-2 {
+    margin-left: -60px;
+    }
+    .video-group.group-2 .dshmp-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 20px;
+    }
+    .video-group.group-2 .ours-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+    /* Video Group 3 Styles */
+    .video-group.group-3 {
+    margin-left: -80px;
+    }
+    .video-group.group-3 .dshmp-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 50px;
+    }
+    .video-group.group-3 .ours-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 50px;
+        padding-left: 35px;
+    }
+    /* Video Group 4 Styles */
+    .video-group.group-4 {
+    margin-left: -80px;
+    }
+    .video-group.group-4 .dshmp-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 50px;
+    }
+    .video-group.group-4 .ours-label {
+    writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 50px;
+        padding-left: 35px;
+    }
+
+    .qualitative-results .rotated-text {
+        writing-mode: vertical;
+        transform: rotate(270deg);
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 80px;
+    }
+    .qualitative-results .video-caption {
+        font-style: italic;
+        font-size: 14px;
+        max-width: 220px; /* 캡션 최대 너비 설정 */
+        word-wrap: break-word; /* 너비 초과 시 줄바꿈 */
+        text-align: center;
+        margin: auto;
+    }
+    .qualitative-results .video-container {
+        margin: 0 auto; /* 가로 중앙 정렬 */
+    }
+    .qualitative-results .video-container img {
+        max-height: 150px; /* GIF 최대 높이 */
+        object-fit: contain;
+        display: block;
+        margin: auto;
+    }
+    .qualitative-results table {
+        border-spacing: -10px;
+    }
+    </style>
+
+    <script>
+    const videoGroups = document.querySelectorAll(".video-group");
+    let currentGroupIndex = 0;
+
+    function updateGroup(newIndex) {
+    videoGroups[currentGroupIndex].style.opacity = "0";
+    setTimeout(() => {
+        videoGroups[currentGroupIndex].style.display = "none";
+        videoGroups[newIndex].style.display = "block";
+        setTimeout(() => {
+        videoGroups[newIndex].style.opacity = "1";
+        }, 10);
+        currentGroupIndex = newIndex;
+    }, 500);
+    }
+
+    document.getElementById("arrow-left-qual").addEventListener("click", () => {
+    const newIndex = (currentGroupIndex - 1 + videoGroups.length) % videoGroups.length;
+    updateGroup(newIndex);
+    });
+
+    document.getElementById("arrow-right-qual").addEventListener("click", () => {
+    const newIndex = (currentGroupIndex + 1) % videoGroups.length;
+    updateGroup(newIndex);
+    });
+    </script>
+    <!-- End of Qualitative Results -->
+
+
+    <section class="hero section quantitative-results">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+        <div class="column is-full-width">
+            <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+            <span class="content has-text-centered highlighted-text">
+            The best-performing results are presented in <strong>bold</strong>, while the second-best results are <u>underlined</u>. <br>
+            </span>
+            <figure class="image is-centered">
+            <img src="static/results/images/quan/main_quan.png" alt="Main Quantitative Results" class="method main-quan">
+            <figcaption class="has-text-centered caption">Quantitative comparison on <strong>MeViS</strong>.</figcaption>
+            </figure>
+            <figure class="image is-centered">
+            <img src="static/results/images/quan/zeroshot_quan.png" alt="Zero-shot Quantitative Results" class="method add-qual">
+            <figcaption class="has-text-centered caption"><strong>Zero-shot</strong> quantitative comparison on <strong>Ref-Youtube-VOS</strong> and <strong>Ref-DAVIS</strong>.</figcaption>
+            </figure>
+            <figure class="image is-centered"></figure>
+            <img src="static/results/images/quan/combined_quan.png" alt="Zero-shot Quantitative Results" class="method add-qual">
+            <figcaption class="has-text-centered caption">Quantitative comparison on <strong>combined dataset</strong> (MeViS + Ref-Youtube-VOS).</figcaption>
+            </figure>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <style>
+    .quantitative-results .main-quan {
+        max-width: 60%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .quantitative-results .add-qual {
+        max-width: 70%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .quantitative-results figure {
+        margin-bottom: 30px;
+    }
+
+    .quantitative-results .caption {
+        font-size: 1.0rem;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    .quantitative-results .highlighted-text {
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    </style>
+
+
+
+    <!-- BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@misc{kim2024referringvideoobjectsegmentation,
+        title={Referring Video Object Segmentation via Language-aligned Track Selection}, 
+        author={Seongchan Kim and Woojeong Jin and Sangbeom Lim and Heeji Yoon and Hyunwook Choi and Seungryong Kim},
+        year={2024},
+        eprint={2412.01136},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2412.01136}, 
+    }</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+        <div class="column is-8">
+            <div class="content">
+
+            <p>
+                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            </p>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+    
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+        <!-- End of Statcounter Code -->
+
+</body>
+</html>

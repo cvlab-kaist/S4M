@@ -1,4 +1,4 @@
-# S⁴M: Boosting Semi-Supervised Instance Segmentation with SAM
+# [ICCV '25] S⁴M: Boosting Semi-Supervised Instance Segmentation with SAM
 
 Official implementation of "S⁴M: Boosting Semi-Supervised Instance Segmentation with SAM"
 

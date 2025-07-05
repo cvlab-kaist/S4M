@@ -36,7 +36,7 @@ python3 -m pip install -r requirements.txt
 python3 -m pip install git+https://github.com/cocodataset/panopticapi.git
 ```
 
-Install SAM2 and download a [model_checkpoint](https://github.com/facebookresearch/sam2#model-description). Please save the SAM2 checkpoints to <path/to/sam2_checkpoint> under `./model_weights` (we recommend that you download san2_hiera_large.pt, as this is the checkpoint we primarily use!).
+Install SAM2 and download a [model_checkpoint](https://github.com/facebookresearch/sam2#model-description). Please save the SAM2 checkpoints under `./model_weights` (we recommend that you download san2_hiera_large.pt, as this is the checkpoint we primarily use!).
 
 ```bash
 cd sam2

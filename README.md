@@ -39,7 +39,7 @@ bash ./scripts/cityscapes/train_student.sh [NUM_GPUS] [PERCENTAGE] [TEACHER_CKPT
 
 # evaluation
 bash ./scripts/cityscapes/val.sh [NUM_GPUS] [TEACHER_CKPT] SSL.TRAIN_SSL False SSL.EVAL_WHO TEACHER
-bash ./scripts/cityscapes/val.sh [NUM_GPUS] [TEACHER_CKPT] SSL.TRAIN_SSL True SSL.EVAL_WHO STUDENT
+bash ./scripts/cityscapes/val.sh [NUM_GPUS] [STUDENT_CKPT] SSL.TRAIN_SSL True SSL.EVAL_WHO STUDENT
 ```
 _We want to note that, in case the of Cityscapes, teacher pre-training is configured to run on 2× RTX 3090 GPUs,
 and semi-supervised student training is configured to run on 4× RTX 3090 GPUs by default._
@@ -53,7 +53,7 @@ bash ./scripts/coco/train_student.sh [NUM_GPUS] [PERCENTAGE] [TEACHER_CKPT]
 
 # evaluation
 bash ./scripts/coco/val.sh [NUM_GPUS] [TEACHER_CKPT] SSL.TRAIN_SSL False SSL.EVAL_WHO TEACHER
-bash ./scripts/coco/val.sh [NUM_GPUS] [TEACHER_CKPT] SSL.TRAIN_SSL True SSL.EVAL_WHO STUDENT
+bash ./scripts/coco/val.sh [NUM_GPUS] [STUDENT_CKPT] SSL.TRAIN_SSL True SSL.EVAL_WHO STUDENT
 ```
 _For the COCO dataset, teacher pre-training is configured to run on 2× RTX A6000 GPUs,
 and semi-supervised student training is configured to run on 4× RTX A6000 GPUs by default._

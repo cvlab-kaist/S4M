@@ -29,7 +29,7 @@ Training is split into two consecutive steps. We provide shell scripts for each 
 - `train_student.sh`: Train the semi-supervised student model. Please note that this stage requires a minimum of 2 GPUs.
 
 
-### Example on Cityscape
+### Example on Cityscapes
 ```bash
 # First train teacher model
 bash ./scripts/cityscapes/train_teacher.sh [NUM_GPUS] [PERCENTAGE] 

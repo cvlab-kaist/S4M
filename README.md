@@ -65,15 +65,15 @@ We provide pre-trained teacher and student model checkpoints for Cityscapes and 
 ### Cityscapes
 |        Model        |       5%      |     10%      |     20%     |     30%     | Download |
 |:--------------------:|:----------:|:---------:|:-----------:|:----------:|:----------:|
-|       Teacher        |  &nbsp;&nbsp;  17.2&nbsp;&nbsp;    | &nbsp;&nbsp;22.5 &nbsp;&nbsp;    |  &nbsp;&nbsp;  29.6 &nbsp;&nbsp;   |    &nbsp;&nbsp;31.9&nbsp;&nbsp;    | [link](https://drive.google.com/drive/folders/12UZkGjj3x4DpI3QW6iQpqWb5Kt7Co3j8?usp=drive_link) |
-|       Student      |   &nbsp;&nbsp; 30.1&nbsp;&nbsp;   |   &nbsp;&nbsp;33.3&nbsp;&nbsp;    |   &nbsp;&nbsp;37.2&nbsp;&nbsp;     |    &nbsp;&nbsp;37.7&nbsp;&nbsp;    | [link](https://drive.google.com/drive/folders/1yWWF-96AbVA1upIkuJJjHmNoyfb9and7?usp=drive_link) |
+|       Teacher        |  17.2    | 22.5    |  29.6    |    31.9    | [link](https://drive.google.com/drive/folders/12UZkGjj3x4DpI3QW6iQpqWb5Kt7Co3j8?usp=drive_link) |
+|       Student      |   30.1   |   33.3    |   37.2     |   37.7    | [link](https://drive.google.com/drive/folders/1yWWF-96AbVA1upIkuJJjHmNoyfb9and7?usp=drive_link) |
 
 
 ### COCO
 |         Model     |       1%      |     2%      |     5%     |     10%     |Download |
 |:--------------------:|:----------:|:---------:|:-----------:|:----------:|:----------:|
-|       Teacher      |   &nbsp;&nbsp; 15.1&nbsp;&nbsp;    |  &nbsp;&nbsp; 20.3&nbsp;&nbsp;   |    &nbsp;&nbsp;26.1&nbsp;&nbsp;     |    &nbsp;&nbsp;30.3&nbsp;&nbsp;    | [link](https://drive.google.com/drive/folders/1nGlm7FTLjMPEUuEoovJxpbkZfFyHHGd8?usp=drive_link) |
-|       Student       |    &nbsp;&nbsp;24.2&nbsp;&nbsp;   |   &nbsp;&nbsp;28.1&nbsp;&nbsp;    |   &nbsp;&nbsp;32.0&nbsp;&nbsp;    |    &nbsp;&nbsp;34.6&nbsp;&nbsp;   | [link](https://drive.google.com/drive/folders/1ljk4w9RigBpA-V0z2WOwulpUDCMybbsO?usp=drive_link) |
+|       Teacher      |   15.1    |   20.3   |    26.1     |    30.3    | [link](https://drive.google.com/drive/folders/1nGlm7FTLjMPEUuEoovJxpbkZfFyHHGd8?usp=drive_link) |
+|       Student       |    24.2   |   28.1    |   32.0    |    34.6   | [link](https://drive.google.com/drive/folders/1ljk4w9RigBpA-V0z2WOwulpUDCMybbsO?usp=drive_link) |
 
 
 </tbody></table>

@@ -18,10 +18,6 @@ from detectron2.utils.events import EventStorage, get_event_storage
 from detectron2.utils.logger import _log_api_usage
 
 from modules.ensemble import EnsembleTSModel
-import matplotlib.pyplot as plt
-import random
-
-import torchvision.transforms.functional as TF
 
 from collections import OrderedDict
 
@@ -29,19 +25,10 @@ __all__ = ["HookBase", "TrainerBase", "SimpleTrainer", "AMPTrainer"]
 
 from detectron2.engine.train_loop import HookBase
 import torch.nn.functional as F
-from PIL import Image, ImageFilter
-from .augmentation import arp_augmentation, arp_augmentation_dynamic
+from .augmentation import arp_augmentation
 
-# from sklearn.cluster import DBSCAN
-# from joblib import Parallel, delayed
-# import multiprocessing
-
-import torchvision.transforms as transforms
-
-import os 
 import sys
 import pdb
-from torchvision.utils import save_image
 
 class ForkedPdb(pdb.Pdb):
     """A Pdb subclass that may be used
@@ -56,45 +43,6 @@ class ForkedPdb(pdb.Pdb):
         finally:
             sys.stdin = _stdin
 
-
-class GaussianBlur:
-    """
-    Gaussian blur augmentation in SimCLR https://arxiv.org/abs/2002.05709
-    Adapted from MoCo:
-    https://github.com/facebookresearch/moco/blob/master/moco/loader.py
-    Note that this implementation does not seem to be exactly the same as
-    described in SimCLR.
-    """
-
-    def __init__(self, sigma=[0.1, 2.0]):
-        self.sigma = sigma
-
-    def __call__(self, x):
-        sigma = random.uniform(self.sigma[0], self.sigma[1])
-        x = x.filter(ImageFilter.GaussianBlur(radius=sigma))
-        return x
-    
-def build_strong_augmentation(is_train=True):
-    """
-    Create a list of :class:`Augmentation` from config.
-    Now it includes resizing and flipping.
-
-    Returns:
-        list[Augmentation]
-    """
-
-    logger = logging.getLogger(__name__)
-    augmentation = []
-    if is_train:
-        # This is simialr to SimCLR https://arxiv.org/abs/2002.05709
-        augmentation.append(
-            transforms.RandomApply([transforms.ColorJitter(0.4, 0.4, 0.4, 0.1)], p=0.8)
-        )
-        augmentation.append(transforms.RandomGrayscale(p=0.2))
-        augmentation.append(transforms.RandomApply([GaussianBlur([0.1, 2.0])], p=0.5))
-
-        logger.info("Augmentations used in training: " + str(augmentation))
-    return transforms.Compose(augmentation)
 
 def calc_cossim_map(feat, coords):
     """
@@ -980,7 +928,6 @@ class AMPTrainerSSL(SimpleTrainerSSL):
         self.precision = precision
         self.log_grad_scaler = log_grad_scaler
         self.refiner = refiner
-        self.strong_aug = build_strong_augmentation()
         self.device = refiner.device if refiner else ("cuda" if torch.cuda.is_available() else "cpu")
         self.num_points = num_points
         self.aug = aug
@@ -1049,21 +996,18 @@ class AMPTrainerSSL(SimpleTrainerSSL):
                     
                     if len(refined_) >= 1: 
                         refined = F.interpolate(refined_, size=(pl_h, pl_w), mode='nearest')
-                        teacher_pl[b]["masks"] = refined.squeeze(1)             
+                        teacher_pl[b]["masks"] = refined.squeeze(1)
+                    
         else :
             with torch.no_grad():
                 teacher_preds = self.model_teacher(data_unl, return_preds=True)
             teacher_pl = self.model_teacher.module.prepare_ssl_outputs(teacher_preds, return_mask_logits=True)
             for i in range(len(teacher_pl)):
-                resized_mask_logit = F.interpolate(teacher_pl[i]['mask_logits'].unsqueeze(1), size =self.im_hw, mode="bilinear").squeeze(1)
+                resized_mask_logit = F.interpolate(teacher_pl[i]['mask_logits'].unsqueeze(1), size=self.im_hw, mode="bilinear").squeeze(1)
                 teacher_pl[i]['original_size_mask'] = (resized_mask_logit > 0).float()
             
         if self.aug:
-            self.mask_hw = teacher_pl[0]['masks'].shape[1:]
-            if self.aug_static:
-                data_unl, teacher_pl = arp_augmentation(data_unl, teacher_pl, self.device, self.apply_strong_aug, self.mask_hw)
-            else:
-                data_unl, teacher_pl = arp_augmentation_dynamic(data_unl, teacher_pl, self.device, self.apply_strong_aug, self.mask_hw)
+            data_unl, teacher_pl = arp_augmentation(data_unl, teacher_pl, self.device, dynamic=(not self.aug_static))
 
         data_ssl = {'data': data_unl, 'pseudo_label': teacher_pl}
         
@@ -1124,13 +1068,3 @@ class AMPTrainerSSL(SimpleTrainerSSL):
         x = (x.float() - self.model_teacher.module.pixel_mean) / self.model_teacher.module.pixel_std
         x = x / 255.0
         return x
-        
-    def apply_strong_aug(self, data_idx):
-        image_wo_weak = Image.fromarray(data_idx['image_wo_weak'].detach().permute(1, 2, 0).cpu().numpy().astype(np.uint8), "RGB")
-        tgt_auged = self.strong_aug(image_wo_weak)
-        data_idx['image_aug'] = torch.as_tensor(np.ascontiguousarray(tgt_auged))
-        if data_idx['image_aug'].shape[0] != 3:
-            data_idx['image_aug'] = data_idx['image_aug'].permute(2, 0, 1)
-            
-        return data_idx
-

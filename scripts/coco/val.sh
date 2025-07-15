@@ -18,7 +18,7 @@ opts=${@}
 
 python3 train_net.py \
 --num-gpus ${ngpus} \
---config-file ./configs/cityscapes/instance-segmentation/maskformer2_R50_bs16_90k.yaml \
+--config-file ./configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep.yaml \
 --dist-url 'auto' \
 --eval-only \
 MODEL.WEIGHTS ${model_weights} \

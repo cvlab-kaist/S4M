@@ -18,7 +18,7 @@ opts=${@}
 
 python3 train_net.py \
 --num-gpus ${ngpus} \
---config-file ./configs/coco/instance-segmentation/maskformer2_R50_bs16_90k.yaml \
+--config-file ./configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep.yaml \
 --dist-url 'auto' \
 OUTPUT_DIR ./outputs/coco_${percentage}/TEACHER \
 SOLVER.CHECKPOINT_PERIOD 5000 \

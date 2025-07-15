@@ -1,6 +1,3 @@
-export OPENBLAS_NUM_THREADS=1
-export DETECTRON2_DATASETS=/media/dataset1/SSIS
-
 ngpus=$1
 percentage=$2
 teacher_ckpt=$3
